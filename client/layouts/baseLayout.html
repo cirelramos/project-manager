@@ -1,0 +1,24 @@
+<template name="baseLayout">
+   
+   <nav>
+
+     <div class="nav-wrapper">
+
+       <a href="#" class="brand-logo right">Projects Manager App </a>
+       
+       <ul id="nav-mobile" class="left">
+
+           {{>loginButtons}}
+           {{#if currentUser}}
+ 
+              <li><a href="{{ pathFor 'profile'}}"> Mi perfil </a></li>
+              <li><a href="{{ pathFor 'Projects'}}"> Proyectos </a></li>
+           {{/if}}
+
+       </ul>
+    
+     </div>
+  
+   </nav>  
+
+</template>
