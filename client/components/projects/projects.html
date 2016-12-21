@@ -1,0 +1,39 @@
+<template name="projects">
+    
+    <div class="row">
+      <div class="col s12">
+
+         <h2> Mis Proyectos </h2>
+<!-- Formulario para crear nuevos proyectos -->
+         <a class="btn" href="{{ pathFor 'project_form'}}">
+               Añadir nuevo proyecto
+
+         </a>
+ <!-- Aquí revisaremos los proyectos que tiene un usuario -->
+          <ul class="collection with-header">
+          
+              {{#if projects.count}}
+                 
+                  {{#each projects}}
+
+                   <li class="collection-item">
+
+                      <div>
+                          {{name}}
+                      </div>
+                  
+                   </li>
+                  {{/each}}
+
+              {{else}}
+
+                   <li> No tienes ningún proyecto</li>
+
+              {{/if}}
+          </ul>    
+
+
+      </div>    
+    </div>
+
+</template>

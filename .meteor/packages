@@ -25,5 +25,5 @@ aldeed:collection2
 aldeed:autoform
 percolate:momentum
 bootstrap3:glyphicons
-npm-bcrypt
 accounts-password
+materialize:materialize@=0.97.6
