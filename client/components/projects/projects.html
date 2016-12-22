@@ -9,12 +9,14 @@
                Añadir nuevo proyecto
 
          </a>
+<!-- Aquí colocaremos el buscador -->   
+         {{> EasySearch.Input index=projects}}
+
  <!-- Aquí revisaremos los proyectos que tiene un usuario -->
           <ul class="collection with-header">
           
-              {{#if projects.count}}
-                 
-                  {{#each projects}}
+                   {{#EasySearch.Each index=projects}}
+                     
 
                    <li class="collection-item">
 
@@ -27,14 +29,29 @@
                       </div>
                   
                    </li>
-                  {{/each}}
+                   {{/EasySearch.Each}}
 
-              {{else}}
+<!-- para colocar mensaje si no hay resultados en la búsqueda -->
 
-                   <li> No tienes ningún proyecto</li>
+                   {{#EasySearch.IfNoResults index=projects}}
 
-              {{/if}}
+                         <li class="collection-item"> No hay resultados..</li>
+
+                    {{/EasySearch.IfNoResults}}
+<!-- para colocar Buscando -->
+
+                   {{#EasySearch.IfSearching index=projects}}
+
+                         <li class="collection-item"> Buscando...</li>
+
+                    {{/EasySearch.IfSearching}}
+
           </ul>    
+
+<!-- para la paginación se coloca el siguiente código -->
+     
+          {{> EasySearch.Pagination index=projects}}
+               
 
 
       </div>    

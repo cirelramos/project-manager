@@ -27,3 +27,4 @@ percolate:momentum
 bootstrap3:glyphicons
 accounts-password
 materialize:materialize@=0.97.6
+easy:search
